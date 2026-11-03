@@ -123,13 +123,17 @@ DATA_WILAYAH = {
 }
 
 # --- Data Modul 2: SPPD ---
-DAFTAR_KOTA_KABUPATEN = [
-    "Jakarta", "Jakarta Pusat", "Jakarta Selatan", "Jakarta Timur", "Jakarta Barat", "Jakarta Utara", "Kepulauan Seribu",
-    "Bogor", "Kota Bogor", "Depok", "Tangerang", "Kota Tangerang", "Tangerang Selatan", "Bekasi", "Kota Bekasi",
-    "Bandung", "Kota Bandung", "Bandung Barat", "Banjar", "Ciamis", "Cianjur", "Cirebon", "Kota Cirebon", 
-    "Garut", "Indramayu", "Karawang", "Kuningan", "Majalengka", "Sumedang", "Subang", "Purwakarta",
-    "Semarang", "Kota Semarang", "Yogyakarta", "Surabaya", "Medan", "Makassar", "Palembang", "Denpasar", "Bandar Lampung"
-]
+# Mengekstrak seluruh kota/kabupaten dari DATA_WILAYAH secara dinamis
+DAFTAR_KOTA_KABUPATEN = [kota for daftar_kota in DATA_WILAYAH.values() for kota in daftar_kota]
+
+# Menambahkan beberapa kata kunci wilayah umum atau kota besar tambahan agar lebih fleksibel
+DAFTAR_KOTA_KABUPATEN.extend([
+    "Jakarta", "Bogor", "Depok", "Tangerang", "Bekasi", 
+    "Bandung", "Semarang", "Yogyakarta", "Surabaya", 
+    "Medan", "Makassar", "Palembang", "Denpasar", "Bandar Lampung"
+])
+
+# Mengurutkan kota secara alfabetis dan menghapus duplikasi
 OPI_KOTA_BLANK = ["(Kosong / Belum diisi)"] + sorted(list(set(DAFTAR_KOTA_KABUPATEN)))
 
 data_pegawai_sppd = {
