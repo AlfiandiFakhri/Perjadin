@@ -1414,7 +1414,7 @@ elif app_mode == "SPPD (Depan & Belakang)":
                 with col2:
                     data_belakang['jabatan_vi'] = st.text_area("Jabatan Penandatangan VI", "DEPUTI BIDANG USAHA MENENGAH\nPejabat Pembuat Komitmen", key="ta_jab_vi").replace("\n", "</d></c>\n<b><c><d>")
                     data_belakang['nama_vi'] = st.text_input("Nama Penandatangan VI", "Christina Agustin", key="ti_nama_vi")
-                    data_belakang['nip_vi'] = st.text_input("NIP Penandatangan VI", "19890520 201403 1 001", key="ti_nip_vi")
+                    data_belakang['nip_vi'] = st.text_input("NIP Penandatangan VI", "19720801 199803 2 001", key="ti_nip_vi")
 
         st.markdown("")
         try:
